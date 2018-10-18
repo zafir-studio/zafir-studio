@@ -1,0 +1,992 @@
+:root {
+  	--hell: #f5f5f5;
+	--mittel: #ccc;
+	--dunkel: #747474;
+	--small-headline-size: 24px;
+	--small-text-size: 15px;
+	--btn-text--size: 17px;
+	--rotate--border--speed: 11s;
+}
+ 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color:#333;
+    box-shadow: inset 0 0 5px #565656; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:#aaa; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+}
+
+
+#logo{
+	position:fixed;
+	top:20px;
+	right: 20px;
+	height: 100px; 
+	width: 100px;
+	background-color: transparent;	
+	z-index:999;
+	background-image:url('img/LOGO_Zafir.png');
+	background-repeat:no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+/*#musicDiv{
+	background-image:url('img/LOGO_Zafir.png');
+	background-repeat:no-repeat;
+	background-size: contain;
+	background-position: center;
+}*/
+
+#coverImg{ display:block; }
+#coverImgMobile{ display:none; }
+
+#musicImg{ display:block; }
+#musicImgMobile{ display:none; }
+
+#section--welcome{
+	position: relative;
+	width:100%;
+	height:100vh;
+	background-color: #fff;
+	border: 30px solid var(--hell);
+	overflow:hidden;
+}
+
+.section--welcome--bigtext{
+	position:relative;
+	width: 100%;
+	text-align: center;
+	/* margin-top:18vh; */
+}
+
+.section--welcome--bigtext:hover{
+	color:#ff3030;
+}
+
+.section--welcome--smalltext{
+	position:absolute;
+	width: 100%;
+	height: 40vh;
+	text-align: center;
+	margin-top:49vh;
+	padding: 0 7vw 0 7vw;
+}
+
+.section--menu--smalltext{
+	position:relative;
+	width: 100%;
+	text-align: center;
+	/* margin-top:29vh; */
+	padding: 0 7vw 0 7vw;
+	font-size: 4vh;
+	font-weight:200;
+	color: #fff;	
+	cursor:pointer;
+}
+
+
+.section--facts--bigtext{
+	position:absolute;
+	width: 100%;
+	height: 20vh;
+	text-align: center;
+	margin-top:18vh;
+}
+
+.section--facts--smalltext{
+	position:absolute;
+	width: 100%;
+	height: 40vh;
+	text-align: center;
+	margin-top:30vh;
+	padding: 0 7vw 0 7vw;
+}
+
+.bigtext{
+	font-size: 6vh;
+	color: var(--hell);	
+	cursor:pointer;
+}
+
+.smalltext{
+	font-family: 'Gothic A1', sans-serif;
+	font-size: 2.6vh;
+	font-weight:200;
+	color: var(--dunkel);	
+}
+
+/* Hamburger */
+.icon{
+	position:fixed;
+	width:80px;
+	height: 80px;
+	top: 30px;
+	left:30px;
+	background-color:transparent;
+	z-index: 200;
+	cursor:pointer;
+}
+
+.hamburger{
+	width: 80px;
+	height: 15px;
+	background-color: var(--mittel);
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	transition: .5s;
+	/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+	border-radius: 6px;
+}
+
+.hamburger::before,
+.hamburger::after
+{
+	content: '';
+	position:absolute;
+	width:80px;
+	height:15px;
+	background-color: var(--mittel);
+	transition: .5s;
+	/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+	border-radius: 6px;
+}
+
+.hamburger::before{
+	top: -30px;	
+}
+.hamburger::after{
+	top: 30px;	
+}
+
+.icon.active .hamburger{
+	background-color: transparent;
+		
+}
+
+.icon.active .hamburger:before{
+	transform:rotate(45deg);
+	top:0;		
+}
+
+.icon.active .hamburger:after{
+	transform:rotate(135deg);
+	top:0;		
+}
+
+.menu{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	background-color: #0f52ba;/* #ff3030 */
+	overflow:hidden;
+	display: none;
+	opacity: 1;
+	transition: .5s;
+	z-index: 199;
+}
+
+.weiter{
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 25px);
+	width: 50px;
+	height:50px;
+	border-radius: 50%;
+	opacity: 1;
+	text-align:center;
+	padding-top: 20px;
+	color:#fff;
+	z-index:100;
+	cursor:pointer;
+}
+
+.weiter::before{
+	content:'';
+	border-radius:50%;
+	position:absolute;
+	width: 55px;
+	height: 55px;
+	border: 1px dashed #ccc;	
+	margin-left:-13.62px;
+	margin-top:-22.39px;
+	
+	-webkit-animation-name: Rotate;
+  -webkit-animation-duration: var(--rotate--border--speed);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: Rotate;
+  -moz-animation-duration: var(--rotate--border--speed);
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: Rotate;
+  -ms-animation-duration: var(--rotate--border--speed);
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+
+@-webkit-keyframes Rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes Rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes Rotate {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+
+.sideButton{
+	position: fixed;
+	top:75vh;
+	right:0px;
+	width:50px;
+	height:50px;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	background-color:white;
+	z-index:999;
+	box-shadow: 0 6px 12px rgba(0,0,0,.3);
+	cursor:pointer;
+}
+
+.sideButton2{
+	position: fixed;
+	top:65vh;
+	right:0px;
+	width:50px;
+	height:50px;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	background-color:white;
+	z-index:999;
+	box-shadow: 0 6px 12px rgba(0,0,0,.3);
+	cursor:pointer;
+}
+
+.imgOverlay1{
+	position:absolute;
+	bottom:2vh;
+	left:0;
+	width:33.33vw;
+	height:15vh;
+}
+
+.imgOverlay2{
+	position:absolute;
+	bottom:2vh;
+	left:33vw;
+	width:33.33vw;
+	height:15vh;
+}
+
+.imgOverlay3{
+	position:absolute;
+	bottom:2vh;
+	right:0;
+	width:33.33vw;
+	height:15vh;
+}
+
+.overlayBox{
+	height:80%;
+	margin:3%;
+	border:1px solid white;
+	border-radius:10px;
+	text-align:left;
+	background-color:rgba(255,255,255,0.2);
+	cursor:pointer;
+}
+
+.boxHead{ font-size:3vmin; }
+.boxText{ font-size:2vmin; }
+			
+.allabout{ margin-top:40vh;width:100%;height:100vh; }
+
+.fadeInBottom{ animation:animatebottom 4s; }
+
+@keyframes animatebottom{from{bottom:-5rem;opacity:0} to{bottom:5rem;opacity:1}}
+			
+.myGradient{
+	width:100%;height:100vh;text-align:center;
+	font-size:10vmax;
+	font-weight:bold;
+	background: linear-gradient(white,white,transparent);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.myGradientIPHONE{
+	display:none;
+	width:100%;height:100vh;text-align:center;
+	font-size:10vmax;
+	font-weight:bold;
+	background: linear-gradient(white,white,transparent);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+.faIcon{ font-size:5rem;color:#0f52ba;margin-bottom:2rem; }
+
+#phoneAPPS{ display:block; }
+#phoneAPPSmobile{ display:none; }
+			
+#webdesignprojects{ margin-top:5rem; }
+
+/* Media queries */
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:1vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:26vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:51vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }
+			
+			.allabout{ margin-top:4vh; }
+			
+			.myGradient{ font-size:7vmax; }
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+			#coverImg{ display:none; }
+			#coverImgMobile{ display:block; }
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:2vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:15vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:28vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }	
+			
+			.allabout{ margin-top:0vh; }
+			
+			.myGradient{ font-size:13vmax; }
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+	
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:1vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:26vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:51vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }
+			
+			.allabout{ margin-top:2vh; }
+			
+			.myGradient{ font-size:7vmax; }
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+
+	
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+			#coverImg{ display:none; }
+			#coverImgMobile{ display:block; }
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:2vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:15vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:28vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }
+			
+			.allabout{ margin-top:0vh; }
+			
+			.myGradient{ font-size:13vmax; }
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+
+	
+}
+
+
+/* iPhone x ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:1vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:26vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:51vh;
+				left:0;
+				width:100vw;
+				height:30vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }
+			
+			.allabout{ margin-top:4vh; }
+			
+			.myGradient{ font-size:7vmax; }
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+
+	
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+			#logo{
+				position:fixed;
+				top:20px;
+				right: 20px;
+				height: 60px; 
+				width: 60px;
+				background-color: transparent;	
+				z-index:999;
+				background-image:url('img/LOGO_Zafir.png');
+				background-repeat:no-repeat;
+				background-size: contain;
+				background-position: center;
+			}
+			
+			#coverImg{ display:none; }
+			#coverImgMobile{ display:block; }
+
+			.icon{
+				position:fixed;
+				width:40px;
+				height: 40px;
+				top: 30px;
+				left:30px;
+				background-color:transparent;
+				z-index: 200;
+				cursor:pointer;
+			}
+			
+			.hamburger{
+				width: 40px;
+				height: 5px;
+				background-color: var(--mittel);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before,
+			.hamburger::after
+			{
+				content: '';
+				position:absolute;
+				width:40px;
+				height:5px;
+				background-color: var(--mittel);
+				transition: .5s;
+				/*box-shadow: 0 6px 12px rgba(0,0,0,.3);*/
+				border-radius: 6px;
+			}
+			
+			.hamburger::before{
+				top: -15px;	
+			}
+			.hamburger::after{
+				top: 15px;	
+			}
+			
+			.imgOverlay1{
+				position:absolute;
+				bottom:2vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay2{
+				position:absolute;
+				bottom:15vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+			
+			.imgOverlay3{
+				position:absolute;
+				bottom:28vh;
+				left:0;
+				width:100vw;
+				height:15vh;
+			}
+
+			.boxHead{ font-size:3vmax; }
+			.boxText{ font-size:2vmax; }
+			
+			.allabout{ margin-top:0vh; }
+			
+			.myGradient{ font-size:13vmax;display:none; }
+
+			.myGradientIPHONE{
+				display:block;
+				font-size:13vmax;
+			}
+			
+			#phoneAPPS{ display:none; }
+			#phoneAPPSmobile{ display:block; }
+			
+			#webdesignprojects{ margin-top:0rem; }
+			
+			
+			#musicImg{ display:none; }
+			#musicImgMobile{ display:block; }
+}
